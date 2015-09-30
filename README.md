@@ -52,6 +52,19 @@ gulp.task('lint', function() {
 });
 ```
 
+## Multiple tasks running simultaneously
+
+If you have multiple tasks using this reported running at once then the produced files will be malformed.
+To prevent this, use the reported like this:
+
+```javascript
+var jenkinsReporter = require('gulp-checkstyle-jenkins-reporter');
+
+/* ... */
+.pipe(jshint.reporter(jenkinsReporter.create(), { /* opts... */ }));
+/* ... */
+```
+
 ## Options
 
 Plugin options:
